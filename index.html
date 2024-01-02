@@ -1,0 +1,47 @@
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+<div id="usercard">
+
+</div>
+<div style="display: inline-block; position: relative;">
+    <div id="characterDialogueBox" style="
+    background-color: white;
+    height: 140px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 4px black solid;
+    display: none;
+    padding: 12px;
+  "></div>
+    <div id="overlappingDiv" style="
+        background-color: black;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        pointer-events: none;
+        "></div>
+    <canvas></canvas>
+</div>
+<!-- <button id="up">Up</button>
+<button id="down">Down</button>
+<button id="left">Left</button>
+<button id="right">Right</button> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="data/battleZones.js"></script>
+<script src="data/collisions.js"></script>
+<script src="data/characters.js"></script>
+<script src="js/utils.js"></script>
+<script src="classes.js"></script>
+<script src="script.js"></script>
