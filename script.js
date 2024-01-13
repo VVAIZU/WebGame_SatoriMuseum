@@ -4,6 +4,12 @@ const c = canvas.getContext('2d')
 canvas.width = 360
 canvas.height = 576
 
+const upButton = document.getElementById('up');
+const leftButton = document.getElementById('left');
+const downButton = document.getElementById('down');
+const rightButton = document.getElementById('right');
+
+
 const collisionsMap = []
 for (let i = 0; i < collisions.length; i += 70) {
     collisionsMap.push(collisions.slice(i, 70 + i))
@@ -241,6 +247,22 @@ const keys = {
     }
 }
 
+upButton.addEventListener('click', () => {
+    keys.w.pressed = true;
+});
+
+leftButton.addEventListener('click', () => {
+    keys.a.pressed = true;
+});
+
+downButton.addEventListener('click', () => {
+    keys.s.pressed = true;
+});
+
+rightButton.addEventListener('click', () => {
+    keys.d.pressed = true;
+});
+
 const movables = [
     background,
     // ...battleZones,
@@ -377,11 +399,11 @@ function animate() {
             }
         }
 
-
         if (moving)
             movables.forEach((movable) => {
                 movable.position.y += 3
             })
+        upButtonPressed = false;
     } else if (keys.a.pressed && lastKey === 'a') {
         player.animate = true
         player.image = player.sprites.left
@@ -521,98 +543,194 @@ animate()
 // animateBattle()
 
 let lastKey = ''
-window.addEventListener('keydown', (e) => {
+// window.addEventListener('keydown', (e) => {
+//     if (player.isInteracting) {
+//         switch (e.key) {
+//             case ' ':
+//                 player.interactionAsset.dialogueIndex++
+
+//                 const { dialogueIndex, dialogue } = player.interactionAsset
+//                 if (dialogueIndex <= dialogue.length - 1) {
+//                     document.querySelector('#characterDialogueBox').innerHTML =
+//                         player.interactionAsset.dialogue[dialogueIndex]
+//                     return
+//                 }
+
+//                 // finish conversation
+//                 player.isInteracting = false
+//                 player.interactionAsset.dialogueIndex = 0
+//                 document.querySelector('#characterDialogueBox').style.display = 'none'
+//                 // if (battle.initiated === true) {
+//                 //     gsap.to('#overlappingDiv', {
+//                 //         opacity: 1,
+//                 //         onComplete: () => {
+//                 //             cancelAnimationFrame(battleAnimationId)
+//                 //             battle.initiated = false
+//                 //             movables.forEach((movable) => {
+//                 //                 if (lastKey === 'w') {
+//                 //                     movable.position.y -= 15
+//                 //                 }
+//                 //                 else if (lastKey === 'a') {
+//                 //                     movable.position.x -= 15
+//                 //                 }
+//                 //                 else if (lastKey === 's') {
+//                 //                     movable.position.y += 15
+//                 //                 }
+//                 //                 else if (lastKey === 'd') {
+//                 //                     movable.position.x += 15
+//                 //                 }
+//                 //             })
+//                 //             cutsceneEnded = true
+//                 //             animate()
+//                 //             gsap.to('#overlappingDiv', {
+//                 //                 opacity: 0
+//                 //             })
+//                 //         }
+//                 //     })
+//                 // }
+
+//                 break
+//         }
+//         return
+//     }
+
+//     switch (e.key) {
+//         case ' ':
+//             if (!player.interactionAsset) return
+
+//             // beginning the conversation
+//             const firstMessage = player.interactionAsset.dialogue[0]
+//             document.querySelector('#characterDialogueBox').innerHTML = firstMessage
+//             document.querySelector('#characterDialogueBox').style.display = 'flex'
+//             player.isInteracting = true
+//             break
+//         case 'w':
+//             keys.w.pressed = true
+//             lastKey = 'w'
+//             break
+//         case 'a':
+//             keys.a.pressed = true
+//             lastKey = 'a'
+//             break
+//         case 's':
+//             keys.s.pressed = true
+//             lastKey = 's'
+//             break
+//         case 'd':
+//             keys.d.pressed = true
+//             lastKey = 'd'
+//             break
+//     }
+// })
+// window.addEventListener('keyup', (e) => {
+//     switch (e.key) {
+//         case 'w':
+//             keys.w.pressed = false
+//             break
+//         case 'a':
+//             keys.a.pressed = false
+//             break
+//         case 's':
+//             keys.s.pressed = false
+//             break
+//         case 'd':
+//             keys.d.pressed = false
+//             break
+//     }
+// })
+// // Обработчики событий нажатия на кнопки на экране
+// upButton.addEventListener('click', () => {
+//     handleKeyPress('w');
+// });
+
+// leftButton.addEventListener('click', () => {
+//     handleKeyPress('a');
+// });
+
+// downButton.addEventListener('click', () => {
+//     handleKeyPress('s');
+// });
+
+// rightButton.addEventListener('click', () => {
+//     handleKeyPress('d');
+// });
+function handleKeyPress(key) {
     if (player.isInteracting) {
-        switch (e.key) {
+        switch (key) {
             case ' ':
-                player.interactionAsset.dialogueIndex++
-
-                const { dialogueIndex, dialogue } = player.interactionAsset
-                if (dialogueIndex <= dialogue.length - 1) {
-                    document.querySelector('#characterDialogueBox').innerHTML =
-                        player.interactionAsset.dialogue[dialogueIndex]
-                    return
-                }
-
-                // finish conversation
-                player.isInteracting = false
-                player.interactionAsset.dialogueIndex = 0
-                document.querySelector('#characterDialogueBox').style.display = 'none'
-                // if (battle.initiated === true) {
-                //     gsap.to('#overlappingDiv', {
-                //         opacity: 1,
-                //         onComplete: () => {
-                //             cancelAnimationFrame(battleAnimationId)
-                //             battle.initiated = false
-                //             movables.forEach((movable) => {
-                //                 if (lastKey === 'w') {
-                //                     movable.position.y -= 15
-                //                 }
-                //                 else if (lastKey === 'a') {
-                //                     movable.position.x -= 15
-                //                 }
-                //                 else if (lastKey === 's') {
-                //                     movable.position.y += 15
-                //                 }
-                //                 else if (lastKey === 'd') {
-                //                     movable.position.x += 15
-                //                 }
-                //             })
-                //             cutsceneEnded = true
-                //             animate()
-                //             gsap.to('#overlappingDiv', {
-                //                 opacity: 0
-                //             })
-                //         }
-                //     })
-                // }
-
-                break
+                // Ваш код обработки нажатия клавиши Space в режиме взаимодействия
+                break;
         }
-        return
+        return;
     }
 
-    switch (e.key) {
+    switch (key) {
         case ' ':
-            if (!player.interactionAsset) return
+            if (!player.interactionAsset) return;
+            // Ваш код начала разговора
+            break;
+        case 'w':
+            keys.w.pressed = true;
+            lastKey = 'w';
+            break;
+        case 'a':
+            keys.a.pressed = true;
+            lastKey = 'a';
+            break;
+        case 's':
+            keys.s.pressed = true;
+            lastKey = 's';
+            break;
+        case 'd':
+            keys.d.pressed = true;
+            lastKey = 'd';
+            break;
+    }
+}
 
-            // beginning the conversation
-            const firstMessage = player.interactionAsset.dialogue[0]
-            document.querySelector('#characterDialogueBox').innerHTML = firstMessage
-            document.querySelector('#characterDialogueBox').style.display = 'flex'
-            player.isInteracting = true
-            break
+function handleKeyUp(key) {
+    switch (key) {
         case 'w':
-            keys.w.pressed = true
-            lastKey = 'w'
-            break
+            keys.w.pressed = false;
+            break;
         case 'a':
-            keys.a.pressed = true
-            lastKey = 'a'
-            break
+            keys.a.pressed = false;
+            break;
         case 's':
-            keys.s.pressed = true
-            lastKey = 's'
-            break
+            keys.s.pressed = false;
+            break;
         case 'd':
-            keys.d.pressed = true
-            lastKey = 'd'
-            break
+            keys.d.pressed = false;
+            break;
     }
-})
+}
+
+// Обработчики событий клавиатуры
+window.addEventListener('keydown', (e) => {
+    handleKeyPress(e.key);
+});
+
 window.addEventListener('keyup', (e) => {
-    switch (e.key) {
-        case 'w':
-            keys.w.pressed = false
-            break
-        case 'a':
-            keys.a.pressed = false
-            break
-        case 's':
-            keys.s.pressed = false
-            break
-        case 'd':
-            keys.d.pressed = false
-            break
-    }
-})
+    handleKeyUp(e.key);
+});
+
+// Обработчики событий нажатия на кнопки на экране
+upButton.addEventListener('touchstart', () => {
+    handleKeyPress('w');
+});
+
+upButton.addEventListener('touchend', () => {
+    handleKeyUp('w');
+});
+
+leftButton.addEventListener('click', () => {
+    handleKeyPress('a');
+});
+
+downButton.addEventListener('click', () => {
+    handleKeyPress('s');
+});
+
+rightButton.addEventListener('click', () => {
+    handleKeyPress('d');
+});
