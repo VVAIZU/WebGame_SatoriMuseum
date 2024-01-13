@@ -59,9 +59,9 @@
     justify-content: center;
   }
   
-  .arrow-btn:active {
+  /* .arrow-btn:active {
     background-color: #2980b9;
-  }
+  } */
 .item {
     position: absolute;
     cursor: pointer;
