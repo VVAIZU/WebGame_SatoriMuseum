@@ -705,61 +705,101 @@ function handleKeyUp(key) {
     }
 }
 
-// Обработчики событий клавиатуры
-window.addEventListener('keydown', (e) => {
-    handleKeyPress(e.key);
-});
+// // Обработчики событий клавиатуры
+// window.addEventListener('keydown', (e) => {
+//     handleKeyPress(e.key);
+// });
 
-window.addEventListener('keyup', (e) => {
-    handleKeyUp(e.key);
-});
+// window.addEventListener('keyup', (e) => {
+//     handleKeyUp(e.key);
+// });
 
 // Обработчики событий нажатия на кнопки на экране
 upButton.addEventListener('mousedown', () => {
+    event.preventDefault();
     handleKeyPress('w');
 });
 upButton.addEventListener('touchstart', () => {
+    event.preventDefault();
     handleKeyPress('w');
 });
 
 upButton.addEventListener('mouseleave', () => {
+    event.preventDefault();
     handleKeyUp('w');
 });
 upButton.addEventListener('touchend', () => {
+    event.preventDefault();
+    handleKeyUp('w');
+});
+upButton.addEventListener('mouseup', () => {
+    event.preventDefault();
     handleKeyUp('w');
 });
 
 leftButton.addEventListener('mousedown', () => {
+    event.preventDefault();
+    handleKeyPress('a');
+});
+leftButton.addEventListener('touchstart', () => {
+    event.preventDefault();
     handleKeyPress('a');
 });
 
+
 leftButton.addEventListener('mouseleave', () => {
+    event.preventDefault();
     handleKeyUp('a');
 });
 leftButton.addEventListener('touchend', () => {
+    event.preventDefault();
+    handleKeyUp('a');
+});
+leftButton.addEventListener('mouseup', () => {
+    event.preventDefault();
     handleKeyUp('a');
 });
 
 downButton.addEventListener('mousedown', () => {
+    event.preventDefault();
     handleKeyPress('s');
 });
 downButton.addEventListener('touchstart', () => {
+    event.preventDefault();
     handleKeyPress('s');
 });
+
 downButton.addEventListener('mouseleave', () => {
+    event.preventDefault();
     handleKeyUp('s');
 });
 downButton.addEventListener('touchend', () => {
+    event.preventDefault();
+    handleKeyUp('s');
+});
+downButton.addEventListener('mouseup', () => {
+    event.preventDefault();
     handleKeyUp('s');
 });
 
 rightButton.addEventListener('mousedown', () => {
+    event.preventDefault();
+    handleKeyPress('d');
+});
+rightButton.addEventListener('touchstart', () => {
+    event.preventDefault();
     handleKeyPress('d');
 });
 
 rightButton.addEventListener('mouseleave', () => {
+    event.preventDefault();
     handleKeyUp('d');
 });
 rightButton.addEventListener('touchend', () => {
+    event.preventDefault();
+    handleKeyUp('d');
+});
+rightButton.addEventListener('mouseup', () => {
+    event.preventDefault();
     handleKeyUp('d');
 });
