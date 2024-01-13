@@ -28,6 +28,10 @@
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
 }
+canvas {
+    width: 80%; /* 80% от ширины родительского контейнера */
+    height: 80%; /* 80% от высоты родительского контейнера */
+}
 
 .item {
     position: absolute;
