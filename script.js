@@ -718,6 +718,9 @@ window.addEventListener('keyup', (e) => {
 upButton.addEventListener('mousedown', () => {
     handleKeyPress('w');
 });
+upButton.addEventListener('touchstart', () => {
+    handleKeyPress('w');
+});
 
 upButton.addEventListener('mouseleave', () => {
     handleKeyUp('w');
@@ -738,6 +741,9 @@ leftButton.addEventListener('touchend', () => {
 });
 
 downButton.addEventListener('mousedown', () => {
+    handleKeyPress('s');
+});
+downButton.addEventListener('touchstart', () => {
     handleKeyPress('s');
 });
 downButton.addEventListener('mouseleave', () => {
