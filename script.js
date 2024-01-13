@@ -1,7 +1,9 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
-canvas.width = 500
+let tg = window.Telegram.WebApps
+
+canvas.width = tg.viewportHeight
 canvas.height = 576
 
 const upButton = document.getElementById('up');
