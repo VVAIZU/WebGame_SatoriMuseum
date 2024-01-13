@@ -3,10 +3,10 @@ const c = canvas.getContext('2d')
 
 let tg = window.Telegram.WebApp
 
-canvas.width = tg.viewportHeight
+canvas.width = 400
 canvas.height = 576
 
-// tg.expand()
+tg.expand()
 
 const upButton = document.getElementById('up');
 const leftButton = document.getElementById('left');
