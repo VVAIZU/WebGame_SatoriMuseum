@@ -1,7 +1,7 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
-canvas.width = 360
+canvas.width = 500
 canvas.height = 576
 
 const upButton = document.getElementById('up');
@@ -285,6 +285,7 @@ const renderables = [
 
 
 function animate() {
+    console.log(keys.w.pressed)
     const animationId = window.requestAnimationFrame(animate)
     gsap.to('#overlappingDiv', {
         opacity: 0,
@@ -301,7 +302,7 @@ function animate() {
     let moving = true
     player.animate = false
 
-    console.log(animationId)
+    // console.log(animationId)
     // if (battle.initiated) return
 
     //battle activation
@@ -403,7 +404,6 @@ function animate() {
             movables.forEach((movable) => {
                 movable.position.y += 3
             })
-        upButtonPressed = false;
     } else if (keys.a.pressed && lastKey === 'a') {
         player.animate = true
         player.image = player.sprites.left
@@ -715,22 +715,33 @@ window.addEventListener('keyup', (e) => {
 });
 
 // Обработчики событий нажатия на кнопки на экране
-upButton.addEventListener('touchstart', () => {
+upButton.addEventListener('mousedown', () => {
     handleKeyPress('w');
 });
 
-upButton.addEventListener('touchend', () => {
+upButton.addEventListener('mouseleave', () => {
     handleKeyUp('w');
 });
 
-leftButton.addEventListener('click', () => {
+leftButton.addEventListener('mousedown', () => {
     handleKeyPress('a');
 });
 
-downButton.addEventListener('click', () => {
-    handleKeyPress('s');
+leftButton.addEventListener('mouseleave', () => {
+    handleKeyUp('a');
 });
 
-rightButton.addEventListener('click', () => {
+downButton.addEventListener('mousedown', () => {
+    handleKeyPress('s');
+});
+downButton.addEventListener('mouseleave', () => {
+    handleKeyUp('s');
+});
+
+rightButton.addEventListener('mousedown', () => {
     handleKeyPress('d');
+});
+
+rightButton.addEventListener('mouseleave', () => {
+    handleKeyUp('d');
 });
