@@ -722,12 +722,18 @@ upButton.addEventListener('mousedown', () => {
 upButton.addEventListener('mouseleave', () => {
     handleKeyUp('w');
 });
+upButton.addEventListener('touchend', () => {
+    handleKeyUp('w');
+});
 
 leftButton.addEventListener('mousedown', () => {
     handleKeyPress('a');
 });
 
 leftButton.addEventListener('mouseleave', () => {
+    handleKeyUp('a');
+});
+leftButton.addEventListener('touchend', () => {
     handleKeyUp('a');
 });
 
@@ -737,11 +743,17 @@ downButton.addEventListener('mousedown', () => {
 downButton.addEventListener('mouseleave', () => {
     handleKeyUp('s');
 });
+downButton.addEventListener('touchend', () => {
+    handleKeyUp('s');
+});
 
 rightButton.addEventListener('mousedown', () => {
     handleKeyPress('d');
 });
 
 rightButton.addEventListener('mouseleave', () => {
+    handleKeyUp('d');
+});
+rightButton.addEventListener('touchend', () => {
     handleKeyUp('d');
 });
