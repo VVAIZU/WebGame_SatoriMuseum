@@ -1,9 +1,9 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
-let tg = window.Telegram.WebApps
+let tg = window.Telegram.WebApp
 
-canvas.width = 400
+canvas.width = tg.viewportHeight
 canvas.height = 576
 
 tg.expand()
