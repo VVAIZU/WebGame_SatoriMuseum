@@ -12,6 +12,7 @@ const upButton = document.getElementById('up');
 const leftButton = document.getElementById('left');
 const downButton = document.getElementById('down');
 const rightButton = document.getElementById('right');
+const usebutton = document.getElementById('use')
 
 
 const collisionsMap = []
@@ -299,12 +300,12 @@ function animate() {
         renderable.draw()
     })
 
+    let moving = true
+    player.animate = false
+
     // battleZones.forEach(battleZone => {
     //     battleZone.draw()
     // })
-
-    let moving = true
-    player.animate = false
 
     // console.log(animationId)
     // if (battle.initiated) return
@@ -662,7 +663,19 @@ function handleKeyPress(key) {
     if (player.isInteracting) {
         switch (key) {
             case ' ':
-                // Ваш код обработки нажатия клавиши Space в режиме взаимодействия
+                player.interactionAsset.dialogueIndex++
+
+                const { dialogueIndex, dialogue } = player.interactionAsset
+                if (dialogueIndex <= dialogue.length - 1) {
+                    document.querySelector('#characterDialogueBox').innerHTML =
+                        player.interactionAsset.dialogue[dialogueIndex]
+                    return
+                }
+
+                // finish conversation
+                player.isInteracting = false
+                player.interactionAsset.dialogueIndex = 0
+                document.querySelector('#characterDialogueBox').style.display = 'none'
                 break;
         }
         return;
@@ -671,7 +684,13 @@ function handleKeyPress(key) {
     switch (key) {
         case ' ':
             if (!player.interactionAsset) return;
-            // Ваш код начала разговора
+                if (!player.interactionAsset) return
+
+                // beginning the conversation
+                const firstMessage = player.interactionAsset.dialogue[0]
+                document.querySelector('#characterDialogueBox').innerHTML = firstMessage
+                document.querySelector('#characterDialogueBox').style.display = 'flex'
+                player.isInteracting = true
             break;
         case 'w':
             keys.w.pressed = true;
@@ -719,6 +738,16 @@ function handleKeyUp(key) {
 // });
 
 // Обработчики событий нажатия на кнопки на экране
+
+usebutton.addEventListener('mousedown', () => {
+    event.preventDefault();
+    handleKeyPress(' ')
+})
+usebutton.addEventListener('touchstart', () => {
+    event.preventDefault();
+    handleKeyPress(' ')
+})
+
 upButton.addEventListener('mousedown', () => {
     event.preventDefault();
     handleKeyPress('w');
