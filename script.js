@@ -792,7 +792,7 @@ function handleKeyPress(key) {
                 player.isInteracting = false
                 player.interactionAsset.dialogueIndex = 0
                 document.querySelector('#characterDialogueBox').style.display = 'none'
-                tg.sendData(player.interactionAsset.achieve)
+                // tg.sendData(player.interactionAsset.achieve)
                 break;
         }
         return;
@@ -805,7 +805,6 @@ function handleKeyPress(key) {
 
                 // beginning the conversation
                 const firstMessage = player.interactionAsset.dialogue[0]
-
                 document.querySelector('#characterDialogueBox').innerHTML = firstMessage
                 document.querySelector('#characterDialogueBox').style.display = 'flex'
                 player.isInteracting = true
