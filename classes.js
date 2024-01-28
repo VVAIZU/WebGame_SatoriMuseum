@@ -178,7 +178,7 @@ class Boundary {
     }
 
     draw() {
-        c.fillStyle = 'rgba(255, 0, 0, 0)'
+        c.fillStyle = 'rgba(255, 0, 0, 0.5)'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
@@ -218,7 +218,8 @@ class Character extends Sprite {
         rotation = 0,
         scale = 1,
         dialogue = [''],
-        movex = false
+        movex = false,
+        achieve = ''
     }) {
         super({
             position,

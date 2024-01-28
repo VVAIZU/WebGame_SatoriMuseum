@@ -27,8 +27,8 @@ for (let i = 0; i < collisions.length; i += 70) {
 
 const boundaries = []
 const offset = {
-    x: -785,
-    y: -650
+    x: -985,
+    y: -1320
 }
 
 const charactersMap = []
@@ -148,10 +148,87 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['...', 'Hey mister, have you seen my Doggochu?']
+                    dialogue: ['...', 'Так ты уезжаешь?', 'Жаль', 'Но я вижу, что ты достойно проводишь время'],
+                    achieve: 'R_VN first achieve'
                 })
             )
         } //1031 - oldMan 
+        else if (symbol === 1027) {
+            characters.push(
+                new Character({
+                    position: {
+                        x: j * Boundary.width + offset.x,
+                        y: i * Boundary.height + offset.y
+                    },
+                    image: oldManImg,
+                    frames: {
+                        max: 4,
+                        hold: 60
+                    },
+                    scale: 3,
+                    animate: true,
+                    dialogue: ['Тестовая реплика'],
+                    achieve: 'R_VN econd achieve'
+                })
+            )
+        }
+        else if (symbol === 1028) {
+            characters.push(
+                new Character({
+                    position: {
+                        x: j * Boundary.width + offset.x,
+                        y: i * Boundary.height + offset.y
+                    },
+                    image: oldManImg,
+                    frames: {
+                        max: 4,
+                        hold: 60
+                    },
+                    scale: 3,
+                    animate: true,
+                    dialogue: ['Тестовая реплика'],
+                    achieve: 'R_VN third achieve'
+                })
+            )
+        }
+        else if (symbol === 1029) {
+            characters.push(
+                new Character({
+                    position: {
+                        x: j * Boundary.width + offset.x,
+                        y: i * Boundary.height + offset.y
+                    },
+                    image: oldManImg,
+                    frames: {
+                        max: 4,
+                        hold: 60
+                    },
+                    scale: 3,
+                    animate: true,
+                    dialogue: ['Тестовая реплика'],
+                    achieve: 'R_VN forth achieve'
+                })
+            )
+        }
+        else if (symbol === 1030) {
+            characters.push(
+                new Character({
+                    position: {
+                        x: j * Boundary.width + offset.x,
+                        y: i * Boundary.height + offset.y
+                    },
+                    image: oldManImg,
+                    frames: {
+                        max: 4,
+                        hold: 60
+                    },
+                    scale: 3,
+                    animate: true,
+                    dialogue: ['Тестовая реплика'],
+                    achieve: 'R_VN third achieve'
+                })
+            )
+        }
         else if (symbol === 1031) {
             characters.push(
                 new Character({
@@ -166,7 +243,46 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['My bones hurt.']
+                    dialogue: ['Тестовая реплика'],
+                    achieve: 'R_VN fivth achieve'
+                })
+            )
+        }
+        else if (symbol === 1032) {
+            characters.push(
+                new Character({
+                    position: {
+                        x: j * Boundary.width + offset.x,
+                        y: i * Boundary.height + offset.y
+                    },
+                    image: oldManImg,
+                    frames: {
+                        max: 4,
+                        hold: 60
+                    },
+                    scale: 3,
+                    animate: true,
+                    dialogue: ['Тестовая реплика'],
+                    achieve: 'R_VN six achieve'
+                })
+            )
+        }
+        else if (symbol === 1033) {
+            characters.push(
+                new Character({
+                    position: {
+                        x: j * Boundary.width + offset.x,
+                        y: i * Boundary.height + offset.y
+                    },
+                    image: oldManImg,
+                    frames: {
+                        max: 4,
+                        hold: 60
+                    },
+                    scale: 3,
+                    animate: true,
+                    dialogue: ['Тестовая реплика'],
+                    achieve: 'R_VN seven achieve'
                 })
             )
         }
@@ -185,22 +301,22 @@ charactersMap.forEach((row, i) => {
 })
 
 const image = new Image()
-image.src = './img/Pellet Town.png'
+image.src = './img/Town2.png'
 
-const foregroundImage = new Image()
-foregroundImage.src = './img/foregroundObjects.png'
+// const foregroundImage = new Image()
+// foregroundImage.src = './img/foregroundObjects.png'
 
 const playerDownImage = new Image()
-playerDownImage.src = './img/playerDown.png'
+playerDownImage.src = './img/1playerDown.png'
 
 const playerUpImage = new Image()
-playerUpImage.src = './img/playerUp.png'
+playerUpImage.src = './img/1playerUp.png'
 
 const playerLeftImage = new Image()
-playerLeftImage.src = './img/playerLeft.png'
+playerLeftImage.src = './img/1playerLeft.png'
 
 const playerRightImage = new Image()
-playerRightImage.src = './img/playerRight.png'
+playerRightImage.src = './img/1playerRight.png'
 
 
 const player = new Sprite({
@@ -229,13 +345,13 @@ const background = new Sprite({
     image: image
 })
 
-const foreground = new Sprite({
-    position: {
-        x: offset.x,
-        y: offset.y
-    },
-    image: foregroundImage
-})
+// const foreground = new Sprite({
+//     position: {
+//         x: offset.x,
+//         y: offset.y
+//     },
+//     image: foregroundImage
+// })
 
 const keys = {
     w: {
@@ -272,7 +388,7 @@ const movables = [
     background,
     // ...battleZones,
     ...boundaries,
-    foreground,
+    // foreground,
     ...characters
 ]
 
@@ -281,7 +397,7 @@ const renderables = [
     ...boundaries,
     ...characters,
     player,
-    foreground
+    // foreground
 ]
 
 // const battle = {
@@ -676,6 +792,7 @@ function handleKeyPress(key) {
                 player.isInteracting = false
                 player.interactionAsset.dialogueIndex = 0
                 document.querySelector('#characterDialogueBox').style.display = 'none'
+                tg.sendData(player.interactionAsset.achieve)
                 break;
         }
         return;
@@ -688,6 +805,7 @@ function handleKeyPress(key) {
 
                 // beginning the conversation
                 const firstMessage = player.interactionAsset.dialogue[0]
+
                 document.querySelector('#characterDialogueBox').innerHTML = firstMessage
                 document.querySelector('#characterDialogueBox').style.display = 'flex'
                 player.isInteracting = true
