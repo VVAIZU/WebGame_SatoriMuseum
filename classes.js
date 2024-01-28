@@ -218,6 +218,7 @@ class Character extends Sprite {
         rotation = 0,
         scale = 1,
         dialogue = [''],
+        movex = false,
         achieve = ''
     }) {
         super({
