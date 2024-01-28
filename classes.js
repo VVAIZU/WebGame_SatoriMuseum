@@ -218,7 +218,6 @@ class Character extends Sprite {
         rotation = 0,
         scale = 1,
         dialogue = [''],
-        movex = false,
         achieve = ''
     }) {
         super({
@@ -233,6 +232,7 @@ class Character extends Sprite {
             achieve
         })
 
+        this.achieve = 'R_VN deafult achieve'
         this.dialogue = dialogue
         this.dialogueIndex = 0
 

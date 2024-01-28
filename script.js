@@ -152,7 +152,7 @@ charactersMap.forEach((row, i) => {
                     achieve: 'R_VN first achieve'
                 })
             )
-        } //1031 - oldMan 
+        } 
         else if (symbol === 1027) {
             characters.push(
                 new Character({
@@ -168,7 +168,7 @@ charactersMap.forEach((row, i) => {
                     scale: 3,
                     animate: true,
                     dialogue: ['Тестовая реплика'],
-                    achieve: 'R_VN econd achieve'
+                    achieve: 'R_VN second achieve'
                 })
             )
         }
