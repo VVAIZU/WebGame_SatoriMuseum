@@ -229,7 +229,8 @@ class Character extends Sprite {
             sprites,
             animate,
             rotation,
-            scale
+            scale,
+            achieve
         })
 
         this.dialogue = dialogue
