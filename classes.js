@@ -229,11 +229,9 @@ class Character extends Sprite {
             sprites,
             animate,
             rotation,
-            scale,
-            achieve
+            scale
         })
-
-        this.achieve = 'R_VN deafult achieve'
+        
         this.dialogue = dialogue
         this.dialogueIndex = 0
 
