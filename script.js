@@ -152,8 +152,8 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
-                    dialogue: ['Здравствуй, подписчик SATORI', 'Я - Кенсе. Была прошлым ботом паблика в 2022 г.', 'Добро пожаловать в музей SATORI! Именно здесь закрепятся в истории лучшие моменты паблика.', 'Новичкам - инфополе, олдам - слезу настальгии пустить. С каждым новым моментом в этом музее появится новая комната. Наслаждайся!', 'Это версия 0.1. Обновления: игра вообще создана.'],
+                    meme: "<img src=\"./img/Memes/kense.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
+                    dialogue: ['Здравствуй, подписчик SATORI', 'Я - Кенсе. Была прошлым ботом паблика в 2022 г.', 'Добро пожаловать в музей SATORI! Именно здесь закрепляются в истории лучшие моменты паблика.', 'Новичкам - инфополе, олдам - слезу ностальгии пустить. С каждым новым моментом в этом музее появится новая комната. Наслаждайся!', 'Это версия 0.1. Обновления: игра вообще создана.'],
                     achieve: 'R_VN first achieve',
                 })
             )
@@ -172,8 +172,8 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
-                    dialogue: ['Второй мем.'],
+                    meme: "<img src=\"./img/Memes/Meme2.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
+                    dialogue: ['2021 г. зима. Создали беседу, которая держалась года 2.', 'За это время в беседе проводились игры, появлялись локальные мемы (Екатерина, токсично шутившая над Максимом)', 'Беседа проседала, но возрождалась каждый раз, когда рекламные боты начинали спамить, а бот-Ирис не мог справиться с этим наплывом.'],
                     achieve: 'R_VN second achieve',
                 })
             )
@@ -192,9 +192,9 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Первый мем.'],
+                    dialogue: ['2021 г. лето. Первый тизер No Remorse - первой большой игры бренда.', 'Она вышла 28 дек. 2022 года и доступна для скачивания в главном телеграм канале.'],
                     achieve: 'R_VN second achieve',
-                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
+                    meme: "<img src=\"./img/Memes/Meme5.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
@@ -212,9 +212,9 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Первый мем.'],
+                    dialogue: ['2021-2022 г. Ежеквартальный конкурс на стикеры.', 'Победитель определялся за счет виджета "рейтинг активности". Юля - главная по активности на тот момент.'],
                     achieve: 'R_VN second achieve',
-                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
+                    meme: "<img src=\"./img/Memes/Mem3.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
@@ -232,9 +232,9 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Первый мем.'],
+                    dialogue: ['2021-2022 г. Наплыв мобильных мини-игр бренда.', 'В ожидании No Remorse были выпущены "Шлёпский побег из Саратова!" и "R_VN"', 'Конечно же, каждый релиз сопровождался конкурсом в паблике за самое скоростное прохождение.', 'Эти игры доступны для скачивания в главном телеграм канале.'],
                     achieve: 'R_VN second achieve',
-                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
+                    meme: "<img src=\"./img/Memes/Meme4.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
@@ -252,9 +252,9 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Первый мем.'],
+                    dialogue: ['2022 г. - Безусловный хит от подписчика. Это записанная на домашний микрофон песня с абсурдным мемным текстом.', 'Вскоре, этот же подписчик посвятил целый альбом SATORI, который так же был тепло принят остальными', 'Послушать можно как в SATORI/MEM4 в тг или вк'],
                     achieve: 'R_VN second achieve',
-                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
+                    meme: "<img src=\"./img/Memes/Meme7.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
@@ -272,53 +272,12 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Статуя лягушенку Пепе никогда не будет лишней!'],
+                    dialogue: ['Статуя лягушенку Пепе никогда не будет лишней! Особенно в музее!'],
                     achieve: 'R_VN second achieve',
-                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
+                    meme: "<img src=\"./img/Memes/pepe.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
-        else if (symbol === 1032) {
-            characters.push(
-                new Character({
-                    position: {
-                        x: j * Boundary.width + offset.x,
-                        y: i * Boundary.height + offset.y
-                    },
-                    image: oldManImg,
-                    frames: {
-                        max: 4,
-                        hold: 60
-                    },
-                    scale: 3,
-                    animate: true,
-                    dialogue: ['Первый мем.'],
-                    achieve: 'R_VN second achieve',
-                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
-                })
-            )
-        }
-        else if (symbol === 1033) {
-            characters.push(
-                new Character({
-                    position: {
-                        x: j * Boundary.width + offset.x,
-                        y: i * Boundary.height + offset.y
-                    },
-                    image: oldManImg,
-                    frames: {
-                        max: 4,
-                        hold: 60
-                    },
-                    scale: 3,
-                    animate: true,
-                    dialogue: ['Первый мем.'],
-                    achieve: 'R_VN second achieve',
-                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
-                })
-            )
-        }
-        
 
         if (symbol !== 0) {
             boundaries.push(
