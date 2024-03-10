@@ -5,6 +5,8 @@ let tg = window.Telegram.WebApp
 
 canvas.width = 400
 canvas.height = 576
+// canvas.width = 1920
+// canvas.height = 1080
 
 tg.expand()
 
@@ -27,8 +29,8 @@ for (let i = 0; i < collisions.length; i += 70) {
 
 const boundaries = []
 const offset = {
-    x: -985,
-    y: -1320
+    x: -420,
+    y: -560
 }
 
 const charactersMap = []
@@ -99,11 +101,13 @@ collisionsMap.forEach((row, i) => {
 
 const characters = []
 const villagerImg = new Image()
-villagerImg.src = './img/villager/Idle.png'
+villagerImg.src = './img/1playerDown.png'
 
 const oldManImg = new Image()
-oldManImg.src = './img/oldMan/Idle.png'
+oldManImg.src = './img/oldMan/Idle2.png'
 
+const firstMemeImg = new Image()
+firstMemeImg.src  = './img/draggleSprite.png'
 // const draggleImage = new Image()
 // draggleImage.src = './img/draggleSprite.png'
 // const draggle = new Sprite({
@@ -134,25 +138,66 @@ oldManImg.src = './img/oldMan/Idle.png'
 charactersMap.forEach((row, i) => {
     row.forEach((symbol, j) => {
         //1026 - villager
-        if (symbol === 1026) {
+        if (symbol === 1030) {
             characters.push(
                 new Character({
                     position: {
                         x: j * Boundary.width + offset.x,
                         y: i * Boundary.height + offset.y
                     },
-                    image: villagerImg,
+                    image: oldManImg,
                     frames: {
                         max: 4,
                         hold: 60
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['...', 'Так ты уезжаешь?', 'Жаль', 'Но я вижу, что ты достойно проводишь время'],
-                    achieve: 'R_VN first achieve'
+                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
+                    dialogue: ['Здравствуй, подписчик SATORI', 'Я - Кенсе. Была прошлым ботом паблика в 2022 г.', 'Добро пожаловать в музей SATORI! Именно здесь закрепятся в истории лучшие моменты паблика.', 'Новичкам - инфополе, олдам - слезу настальгии пустить. С каждым новым моментом в этом музее появится новая комната. Наслаждайся!', 'Это версия 0.1. Обновления: игра вообще создана.'],
+                    achieve: 'R_VN first achieve',
                 })
             )
         } 
+        else if (symbol === 1025) {
+            characters.push(
+                new Character({
+                    position: {
+                        x: j * Boundary.width + offset.x,
+                        y: i * Boundary.height + offset.y
+                    },
+                    image: oldManImg,
+                    frames: {
+                        max: 4,
+                        hold: 60
+                    },
+                    scale: 3,
+                    animate: true,
+                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
+                    dialogue: ['Второй мем.'],
+                    achieve: 'R_VN second achieve',
+                })
+            )
+        }
+        else if (symbol === 1026) {
+            characters.push(
+                new Character({
+                    position: {
+                        x: j * Boundary.width + offset.x,
+                        y: i * Boundary.height + offset.y
+                    },
+                    image: oldManImg,
+                    frames: {
+                        max: 4,
+                        hold: 60
+                    },
+                    scale: 3,
+                    animate: true,
+                    dialogue: ['Первый мем.'],
+                    achieve: 'R_VN second achieve',
+                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
+                })
+            )
+        }
         else if (symbol === 1027) {
             characters.push(
                 new Character({
@@ -167,8 +212,9 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Тестовая реплика'],
-                    achieve: 'R_VN second achieve'
+                    dialogue: ['Первый мем.'],
+                    achieve: 'R_VN second achieve',
+                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
@@ -186,8 +232,9 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Тестовая реплика'],
-                    achieve: 'R_VN third achieve'
+                    dialogue: ['Первый мем.'],
+                    achieve: 'R_VN second achieve',
+                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
@@ -205,27 +252,9 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Тестовая реплика'],
-                    achieve: 'R_VN forth achieve'
-                })
-            )
-        }
-        else if (symbol === 1030) {
-            characters.push(
-                new Character({
-                    position: {
-                        x: j * Boundary.width + offset.x,
-                        y: i * Boundary.height + offset.y
-                    },
-                    image: oldManImg,
-                    frames: {
-                        max: 4,
-                        hold: 60
-                    },
-                    scale: 3,
-                    animate: true,
-                    dialogue: ['Тестовая реплика'],
-                    achieve: 'R_VN third achieve'
+                    dialogue: ['Первый мем.'],
+                    achieve: 'R_VN second achieve',
+                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
@@ -243,8 +272,9 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Тестовая реплика'],
-                    achieve: 'R_VN fivth achieve'
+                    dialogue: ['Статуя лягушенку Пепе никогда не будет лишней!'],
+                    achieve: 'R_VN second achieve',
+                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
@@ -262,8 +292,9 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Тестовая реплика'],
-                    achieve: 'R_VN six achieve'
+                    dialogue: ['Первый мем.'],
+                    achieve: 'R_VN second achieve',
+                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
@@ -281,11 +312,13 @@ charactersMap.forEach((row, i) => {
                     },
                     scale: 3,
                     animate: true,
-                    dialogue: ['Тестовая реплика'],
-                    achieve: 'R_VN seven achieve'
+                    dialogue: ['Первый мем.'],
+                    achieve: 'R_VN second achieve',
+                    meme: "<img src=\"./img/Memes/first.png\" alt=\"meme\" width=\"300px\" height=\"400px\">",
                 })
             )
         }
+        
 
         if (symbol !== 0) {
             boundaries.push(
@@ -301,7 +334,7 @@ charactersMap.forEach((row, i) => {
 })
 
 const image = new Image()
-image.src = './img/Town2.png'
+image.src = './img/Museum.png'
 
 // const foregroundImage = new Image()
 // foregroundImage.src = './img/foregroundObjects.png'
@@ -777,14 +810,14 @@ let lastKey = ''
 // });
 function handleKeyPress(key) {
     if (player.isInteracting) {
+        // document.querySelector('#MemeImage').innerHTML = player.interactionAsset.meme
         switch (key) {
             case ' ':
                 player.interactionAsset.dialogueIndex++
 
                 const { dialogueIndex, dialogue } = player.interactionAsset
                 if (dialogueIndex <= dialogue.length - 1) {
-                    document.querySelector('#characterDialogueBox').innerHTML =
-                        player.interactionAsset.dialogue[dialogueIndex]
+                    document.querySelector('#characterDialogueBox').innerHTML = player.interactionAsset.dialogue[dialogueIndex]
                     return
                 }
 
@@ -792,6 +825,7 @@ function handleKeyPress(key) {
                 player.isInteracting = false
                 player.interactionAsset.dialogueIndex = 0
                 document.querySelector('#characterDialogueBox').style.display = 'none'
+                document.querySelector('#MemeImage').style.display = 'none'
                 // tg.sendData(player.interactionAsset.achieve)
                 break;
         }
@@ -802,8 +836,10 @@ function handleKeyPress(key) {
         case ' ':
             if (!player.interactionAsset) return;
                 if (!player.interactionAsset) return
-
+                
                 // beginning the conversation
+                document.querySelector('#MemeImage').style.display = 'flex'
+                document.querySelector('#MemeImage').innerHTML = player.interactionAsset.meme
                 const firstMessage = player.interactionAsset.dialogue[0]
                 document.querySelector('#characterDialogueBox').innerHTML = firstMessage
                 document.querySelector('#characterDialogueBox').style.display = 'flex'

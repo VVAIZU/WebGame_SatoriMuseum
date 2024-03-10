@@ -219,6 +219,7 @@ class Character extends Sprite {
         scale = 1,
         dialogue = [''],
         movex = false,
+        meme,
         achieve = ''
     }) {
         super({
@@ -232,6 +233,14 @@ class Character extends Sprite {
             scale
         })
         
+        this.meme = meme
+        // this.meme = new Image()
+        // this.meme.onload = () => {
+        //     this.width = 400;
+        //     this.height= 140; 
+        // }
+        // this.meme.src = meme.src
+
         this.dialogue = dialogue
         this.dialogueIndex = 0
 
