@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('resize', resizeCanvas);
-window.addEventListener('orientationchange', resizeCanvas);
 // canvas.width = 1920
 // canvas.height = 1080
 
