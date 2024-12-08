@@ -89,6 +89,47 @@
         pointer-events: none;
         "></div>
     <canvas></canvas>
+        <script>
+        const canvas = document.querySelector('canvas');
+        const c = canvas.getContext('2d');
+
+        // Изначальные размеры канваса
+        const initialWidth = 400;
+        const initialHeight = 576;
+
+        // Функция для установки размеров канваса
+        function resizeCanvas() {
+            const tg = window.Telegram.WebApp;
+            // Устанавливаем размеры канваса в зависимости от доступного пространства
+            canvas.width = tg.viewportWidth;
+            canvas.height = tg.viewportHeight;
+
+            // Пропорционально изменяем содержимое канваса
+            c.scale(canvas.width / initialWidth, canvas.height / initialHeight);
+            draw(); // Вызываем функцию отрисовки
+        }
+
+        // Функция для отрисовки (пример)
+        function draw() {
+            c.clearRect(0, 0, canvas.width, canvas.height);
+            // Здесь добавьте вашу логику отрисовки игры
+            c.fillStyle = 'blue'; // Пример: рисуем синий прямоугольник
+            c.fillRect(50, 50, 100, 100);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.Telegram && window.Telegram.WebApp) {
+                window.Telegram.WebApp.expand();
+                resizeCanvas(); // Устанавливаем размеры канваса при загрузке
+            }
+        });
+
+        // Обработчик события изменения размера окна
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Обработчик события изменения ориентации экрана
+        window.addEventListener('orientationchange', resizeCanvas);
+    </script>
 </div>
 <div class="controls-container">
     <button class="arrow-btn" id="up">&#8593;</button>
