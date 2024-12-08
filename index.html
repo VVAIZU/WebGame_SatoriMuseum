@@ -50,6 +50,18 @@
     body {
         background-color: black;
     }
+    #canvas-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 576px;
+    }
 </style>
 <div id="usercard">
 
@@ -88,7 +100,9 @@
         opacity: 0;
         pointer-events: none;
         "></div>
-    <canvas></canvas>
+    <div id="canvas-container">
+        <canvas></canvas>
+    </div>
 </div>
 <div class="controls-container">
     <button class="arrow-btn" id="up">&#8593;</button>
