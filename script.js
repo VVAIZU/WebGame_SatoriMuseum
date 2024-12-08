@@ -1,21 +1,31 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
-// canvas.width = 1920
-// canvas.height = 1080
 
-// tg.expand()
-
-let tg = window.Telegram.WebApp
 
 canvas.width = 400
 canvas.height = 576
 
+function resizeCanvas() {
+    const tg = window.Telegram.WebApp;
+    const viewportHeight = tg.viewportHeight;
+    const viewportWidth = tg.viewportWidth;
+
+    canvas.style.width = `${viewportWidth}px`;
+    canvas.style.height = `${viewportHeight}px`;
+}
+window.addEventListener('resize', resizeCanvas);
+
 document.addEventListener('DOMContentLoaded', function () {
     if (window.Telegram && window.Telegram.WebApp) {
         window.Telegram.WebApp.expand();
+        resizeCanvas(); // Вызываем функцию для установки размеров канваса
     }
 });
 
+// canvas.width = 1920
+// canvas.height = 1080
+
+// tg.expand()
 const upButton = document.getElementById('up');
 const leftButton = document.getElementById('left');
 const downButton = document.getElementById('down');
