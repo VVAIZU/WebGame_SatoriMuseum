@@ -12,8 +12,9 @@ function resizeCanvas() {
 
     canvas.style.width = `${viewportWidth}px`;
     canvas.style.height = `${viewportHeight}px`;
+
+    c.scale(viewportWidth / 400, viewportHeight / 576);
 }
-window.addEventListener('resize', resizeCanvas);
 
 document.addEventListener('DOMContentLoaded', function () {
     if (window.Telegram && window.Telegram.WebApp) {
@@ -22,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('orientationchange', resizeCanvas);
 // canvas.width = 1920
 // canvas.height = 1080
 
