@@ -1,36 +1,37 @@
 const canvas = document.querySelector('canvas')
+const canvasContainer = document.querySelector('#canvas-container');
 const c = canvas.getContext('2d')
 
 // Фиксированные размеры canvas
 canvas.width = 400
 canvas.height = 576
-const originalWidth = 400;
-const originalHeight = 580;
+// const originalWidth = 400;
+// const originalHeight = 580;
 
-function resizeCanvas() {
-    const canvasContainer = document.getElementById('canvas-container');
-    const rect = canvasContainer.getBoundingClientRect();
+// function resizeCanvas() {
+//     const canvasContainer = document.getElementById('canvas-container');
+//     const rect = canvasContainer.getBoundingClientRect();
 
-    // Устанавливаем ширину и высоту canvas
-    // canvas.width = originalWidth;
-    // canvas.height = originalHeight;
+//     // Устанавливаем ширину и высоту canvas
+//     // canvas.width = originalWidth;
+//     // canvas.height = originalHeight;
 
-    // Вычисляем коэффициенты масштабирования
-    const scaleX = rect.width / originalWidth;
-    const scaleY = rect.height / originalHeight;
+//     // Вычисляем коэффициенты масштабирования
+//     const scaleX = rect.width / originalWidth;
+//     const scaleY = rect.height / originalHeight;
 
-    // // Масштабируем содержимое canvas
-    // c.setTransform(scaleX, 0, 0, scaleY, 0, 0);
-}
+//     // // Масштабируем содержимое canvas
+//     // c.setTransform(scaleX, 0, 0, scaleY, 0, 0);
+// }
 
-// Вызываем функцию при загрузке страницы
-document.addEventListener('DOMContentLoaded', function () {
-    if (window.Telegram && window.Telegram.WebApp) {
-        window.Telegram.WebApp.expand();
-    }
-    // resizeCanvas();
-});
-window.Telegram.WebApp.expand();
+// // Вызываем функцию при загрузке страницы
+// document.addEventListener('DOMContentLoaded', function () {
+//     if (window.Telegram && window.Telegram.WebApp) {
+//         window.Telegram.WebApp.expand();
+//     }
+//     // resizeCanvas();
+// });
+// window.Telegram.WebApp.expand();
 // Обновляем размеры при изменении экрана
 // window.addEventListener('resize', resizeCanvas);
 

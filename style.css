@@ -1,6 +1,14 @@
 /* Общий стиль */
 body {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; */
     margin: 0;
     padding: 0;
     background-color: black;
@@ -12,16 +20,33 @@ body {
 }
 
 #canvas-container {
+    /* position: relative;
+    width: 100%; 
+    max-width: 400px; 
+    aspect-ratio: 400 / 800; 
+    background-color: #222;
+    border: 1px solid #888;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; */
     position: relative;
-    width: 100%; /* Растягиваем контейнер по ширине */
-    max-width: 400px; /* Ограничиваем ширину */
-    aspect-ratio: 400 / 800; /* Сохраняем соотношение сторон */
     background-color: #222;
     border: 1px solid #888;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
+    /* Адаптивный размер с сохранением пропорций */
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 400 / 800;
+
+    /* Центрирование */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* MemeImage над canvas */
@@ -40,12 +65,10 @@ body {
 }
 
 /* Canvas */
-/* canvas {
-    width: 100%; 
-    height: 100%; 
-    background-color: black;
-    z-index: 1;
-} */
+canvas {
+    width: 100%; /* Растягиваем канвас по ширине контейнера */
+    height: auto; /* Поддерживаем соотношение сторон */
+}
 
 /* Панель управления */
 .controls-container {
@@ -118,7 +141,7 @@ body {
     background-color: #d35400;
 }
 
-/* Адаптивность для мобильных устройств */
+/* Адаптивность для мобильных устройств
 @media (max-width: 768px) {
     #canvas-container {
         width: 100%;
@@ -136,4 +159,4 @@ body {
         height: 60px;
         font-size: 12px;
     }
-}
+} */
