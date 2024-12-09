@@ -1,8 +1,9 @@
 /**************************************/
- body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 
 #game-container {
@@ -28,6 +29,7 @@
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
 }
+
 /* canvas {
     width: 80%; /* 80% от ширины родительского контейнера 
     height: 80%; /* 80% от высоты родительского контейнера 
@@ -37,14 +39,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .horizontal-controls {
+}
+
+.horizontal-controls {
     display: flex;
     margin-top: 10px;
-  }
-  
-  .arrow-btn {
+}
+
+.arrow-btn {
     font-size: 24px;
     width: 40px;
     height: 40px;
@@ -57,10 +59,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    user-select: none; 
-  }
-  
-  /* .arrow-btn:active {
+    user-select: none;
+}
+
+/* .arrow-btn:active {
     background-color: #2980b9;
   } */
 .item {
@@ -115,4 +117,45 @@ button {
 button {
     margin-top: 10px;
     cursor: pointer;
-} 
+}
+
+#MemeImage {
+    background-color: white;
+    height: 400px;
+    width: 300px;
+    position: absolute;
+    bottom: 150px;
+    left: 50px;
+    right: 50px;
+    display: none;
+}
+
+#characterDialogueBox {
+    background-color: white;
+    height: 140px;
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 4px black solid;
+    display: none;
+    padding: 12px;
+}
+
+#overlappingDiv {
+    background-color: var(--tg-theme-bg-color);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#canvas-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
