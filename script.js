@@ -2,8 +2,8 @@ const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
 // Фиксированные размеры canvas
-canvas.width = 400
-canvas.height = 576
+// canvas.width = 400
+// canvas.height = 576
 const originalWidth = 400;
 const originalHeight = 580;
 
@@ -12,15 +12,15 @@ function resizeCanvas() {
     const rect = canvasContainer.getBoundingClientRect();
 
     // Устанавливаем ширину и высоту canvas
-    // canvas.width = originalWidth;
-    // canvas.height = originalHeight;
+    canvas.width = originalWidth;
+    canvas.height = originalHeight;
 
     // Вычисляем коэффициенты масштабирования
     const scaleX = rect.width / originalWidth;
     const scaleY = rect.height / originalHeight;
 
     // // Масштабируем содержимое canvas
-    // c.setTransform(scaleX, 0, 0, scaleY, 0, 0);
+    c.setTransform(scaleX, 0, 0, scaleY, 0, 0);
 }
 
 // Вызываем функцию при загрузке страницы
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.Telegram && window.Telegram.WebApp) {
         window.Telegram.WebApp.expand();
     }
-    // resizeCanvas();
+    resizeCanvas();
 });
 
 // Обновляем размеры при изменении экрана
