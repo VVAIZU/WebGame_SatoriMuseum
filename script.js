@@ -4,8 +4,8 @@ const c = canvas.getContext('2d')
 // Фиксированные размеры canvas
 canvas.width = 400
 canvas.height = 576
-// const originalWidth = 400;
-// const originalHeight = 580;
+const originalWidth = 400;
+const originalHeight = 580;
 
 function resizeCanvas() {
     const canvasContainer = document.getElementById('canvas-container');
