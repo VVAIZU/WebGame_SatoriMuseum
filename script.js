@@ -24,10 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('resize', resizeCanvas);
-// canvas.width = 1920
-// canvas.height = 1080
 
-// tg.expand()
 const upButton = document.getElementById('up');
 const leftButton = document.getElementById('left');
 const downButton = document.getElementById('down');
